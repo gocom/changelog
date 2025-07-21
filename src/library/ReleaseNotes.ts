@@ -23,22 +23,24 @@
  * SOFTWARE.
  */
 
-import type {Changelog} from '../types/Changelog';
-import {readFile} from 'node:fs/promises';
-import {parse} from './Parser';
+import type {ReleaseNotesOptions} from '../types/ReleaseNotes';
+import {compile} from 'handlebars';
+import {defaultReleaseNotesTemplate} from '../types/ReleaseNotes';
 
 /**
- * Parses the given file.
+ * Returns the given changelog as a formatted release notes.
  *
- * @param {string} path Path to changelog file to parse.
- * @return {Changelog[]} Returns an array of changes per version.
+ * @param {ReleaseNotesOptions} options
+ * @return {string}
  * @group Library
  * @category API
  */
-export const parseFile = async (
-  path: string
-): Promise<Changelog[]> => {
-  const contents = (await readFile(path)).toString();
+export const asReleaseNotes = (
+  options: ReleaseNotesOptions
+): string => {
+  const template = compile(options.template ?? defaultReleaseNotesTemplate);
 
-  return parse(contents);
+  return template({
+    ...options.changelog,
+  });
 };

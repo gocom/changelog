@@ -23,17 +23,25 @@
  * SOFTWARE.
  */
 
-/**
- * Private API.
- *
- * Internal types and other internal functionality. These are included in API documentation only for reference
- * purposes.
- *
- * @module Private
- * @group Library
- * @category Internal
- */
+import type {Version} from './Version';
+import type {ChangelogDocument} from './Document';
 
-export {
-  defaultReleaseNotesTemplate,
-} from './types/ReleaseNotes';
+/**
+ * Extract options.
+ *
+ * Available options for {@link extract}.
+ *
+ * @group Library
+ * @category Options
+ */
+export interface ExtractOptions {
+  /**
+   * Source changelog document contents to parse.
+   */
+  contents: ChangelogDocument
+
+  /**
+   * Version to extract.
+   */
+  version: Version
+}

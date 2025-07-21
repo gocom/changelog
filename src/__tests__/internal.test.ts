@@ -23,17 +23,8 @@
  * SOFTWARE.
  */
 
-/**
- * Private API.
- *
- * Internal types and other internal functionality. These are included in API documentation only for reference
- * purposes.
- *
- * @module Private
- * @group Library
- * @category Internal
- */
+import {defaultReleaseNotesTemplate} from '../internal';
 
-export {
-  defaultReleaseNotesTemplate,
-} from './types/ReleaseNotes';
+test('Exports', () => {
+  expect(defaultReleaseNotesTemplate).toBeDefined();
+});

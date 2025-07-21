@@ -44,6 +44,10 @@ export {
 } from './library/Parser';
 
 export type {
+  asReleaseNotes,
+} from './library/ReleaseNotes';
+
+export type {
   Changelog,
 } from './types/Changelog';
 
@@ -52,8 +56,16 @@ export type {
 } from './types/Document';
 
 export type {
+  ExtractOptions,
+} from './types/Extract';
+
+export type {
   ParserOptions,
 } from './types/Parser';
+
+export type {
+  ReleaseNotesOptions,
+} from './types/ReleaseNotes';
 
 export type {
   Template,

@@ -23,25 +23,28 @@
  * SOFTWARE.
  */
 
-import type {Changelog} from '../types/Changelog';
-import type {Version} from '../types/Version';
-import type {ChangelogDocument} from '../types/Document';
 import {parse} from './Parser';
+import type {Changelog} from '../types/Changelog';
+import type {ChangelogDocument} from '../types/Document';
+import type {ExtractOptions} from '../types/Extract';
 
 /**
  * Extracts the specified version from the given changelog.
  *
- * @param {Version} version Version to extract
- * @param {ChangelogDocument} contents Markdown changelog contents
+ * @param {ExtractOptions} options Options.
  * @return {Changelog|undefined} Returns changelog for the version, or `undefined`, if the version could not
  * be found from the changelog, or the version number is not a valid semantic version number.
  * @group Library
  * @category API
  */
 export const extract = (
-  version: Version,
-  contents: ChangelogDocument
+  options: ExtractOptions
 ): Changelog|undefined => {
+  const {
+    contents,
+    version,
+  } = options;
+
   return parse(contents)
     .find((changelog) => changelog.version === version);
 };
@@ -50,7 +53,7 @@ export const extract = (
  * Gets the latest version from the given changelog document contents.
  *
  * The versions are sorted based semantic versioning rules, and the latest version is
- * extracted from the changelog. If there is no marked version number in the d
+ * extracted from the changelog. If there is no marked version number in the do
  *
  * @param {ChangelogDocument} contents
  * @return {Changelog|undefined} Changelog for the latest version, or `undefined` if there were no valid versions

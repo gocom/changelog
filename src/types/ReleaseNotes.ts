@@ -23,17 +23,50 @@
  * SOFTWARE.
  */
 
-/**
- * Private API.
- *
- * Internal types and other internal functionality. These are included in API documentation only for reference
- * purposes.
- *
- * @module Private
- * @group Library
- * @category Internal
- */
+import type {Template} from './Template';
+import type {Changelog} from './Changelog';
 
-export {
-  defaultReleaseNotesTemplate,
-} from './types/ReleaseNotes';
+/**
+ * Default release notes template.
+ *
+ * @group Library
+ * @category API
+ */
+export const defaultReleaseNotesTemplate = `
+## 🚀 Notes for {{version}}
+
+{{notes}}
+`;
+
+/**
+ * Release notes options.
+ *
+ * Available options for {@link asReleaseNotes}.
+ *
+ * @group Library
+ * @category Options
+ */
+export interface ReleaseNotesOptions {
+  /**
+   * Changelog to format as release notes.
+   */
+  changelog: Changelog
+
+  /**
+   * Template string.
+   *
+   * The template is passed down to handlebars, allowing the use of variables and handlebars templating language
+   * to format the release notes. Available template variables match the properties in the {@link Changelog}
+   * object, including:
+   *
+   * - `{{isPrerelease}}`
+   * - `{{notes}}`
+   * - `{{title}}`
+   * - `{{version}}`
+   *
+   * See {@link defaultReleaseNotesTemplate} for the default template.
+   *
+   * @see [Handlebars](https://handlebarsjs.com/)
+   */
+  template?: Template
+}

@@ -34,9 +34,6 @@ import type {ChangelogDocument} from '../types/Document';
  *
  * When passed down to {@link String.split}, we end up with each capture group in a flat array, from where
  * each item can be chunked into grouped objects.
- *
- * @group Library
- * @category Internal
  */
 const sectionsSplitRegex = /^(?:(#{1,6}) ([0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9-_.]+)?)([^\r\n]*)|([0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9-_.]+)?)([^\r\n]*)[\r\n]([=-]+))$/gm;
 
@@ -77,8 +74,8 @@ export const parse = (
       results.push({
         version,
         isPrerelease: !!prerelease(version),
-        title: trimDividers(title ?? ''),
-        notes: cutAtTrailingHeading(level, notes ?? ''),
+        title: trimDividers(title),
+        notes: cutAtTrailingHeading(level, notes),
       });
     }
   }

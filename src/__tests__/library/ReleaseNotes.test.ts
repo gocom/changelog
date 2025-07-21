@@ -23,17 +23,29 @@
  * SOFTWARE.
  */
 
-/**
- * Private API.
- *
- * Internal types and other internal functionality. These are included in API documentation only for reference
- * purposes.
- *
- * @module Private
- * @group Library
- * @category Internal
- */
+import {asReleaseNotes} from '../../library/ReleaseNotes';
 
-export {
-  defaultReleaseNotesTemplate,
-} from './types/ReleaseNotes';
+test('basic', () => {
+  const actual = asReleaseNotes({
+    changelog: {
+      version: '0.1.0',
+      notes: '* Change 1',
+      isPrerelease: false,
+    },
+  });
+
+  expect(actual).toContain('Change');
+});
+
+test('template given', () => {
+  const actual = asReleaseNotes({
+    changelog: {
+      version: '0.1.0',
+      notes: '* Change 1',
+      isPrerelease: false,
+    },
+    template: '{{version}}',
+  });
+
+  expect(actual).toBe('0.1.0');
+});
