@@ -1,7 +1,7 @@
 Changelog
 =====
 
-[![npm](https://img.shields.io/npm/v/%40gocom%2Fchangelog)](https://www.npmjs.com/package/@gocom/changelog) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/gocom/changelog/blob/main/LICENSE) ![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/gocom/changelog/blob/main/LICENSE) ![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)
 
 Extract changelogs from CHANGELOG.md.
 
