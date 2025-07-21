@@ -39,7 +39,7 @@ EOF
 
   # Remove badges, replace branch URL references with the version tag.
   sed -e "1,/\[/d" -e '/🛠️ Development/,$d' README.md \
-    | sed "s/\/master\//\/$version\//"
+    | sed "s/\/main\//\/$version\//"
 
   # Add changes section.
   notes="$(sed -e "1,/## $version/d" -e '/##/,$d' CHANGELOG.md)"
