@@ -8,7 +8,7 @@
 
 > **extract**(`version`, `contents`): `undefined` \| [`Changelog`](../Types/API.Changelog.md)
 
-Defined in: [library/Extract.ts:41](https://github.com/gocom/changelog/blob/db749aeb3b7fa142eb99a35449a056a38ba2e6fc/src/library/Extract.ts#L41)
+Defined in: [library/Extract.ts:41](https://github.com/gocom/changelog/blob/dfbd85c4c9fd82309397c2119164c582a7910c7e/src/library/Extract.ts#L41)
 
 Extracts the specified version from the given changelog.
 
