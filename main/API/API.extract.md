@@ -6,25 +6,19 @@
 
 # Function: extract()
 
-> **extract**(`version`, `contents`): `undefined` \| [`Changelog`](../Types/API.Changelog.md)
+> **extract**(`options`): `undefined` \| [`Changelog`](../Types/API.Changelog.md)
 
-Defined in: [library/Extract.ts:41](https://github.com/gocom/changelog/blob/dfbd85c4c9fd82309397c2119164c582a7910c7e/src/library/Extract.ts#L41)
+Defined in: [library/Extract.ts:40](https://github.com/gocom/changelog/blob/6ecf3d82271243a19bf949b1b2aa8e1b05030346/src/library/Extract.ts#L40)
 
 Extracts the specified version from the given changelog.
 
 ## Parameters
 
-### version
+### options
 
-`string`
+[`ExtractOptions`](../Options/API.ExtractOptions.md)
 
-Version to extract
-
-### contents
-
-`string`
-
-Markdown changelog contents
+Options.
 
 ## Returns
 

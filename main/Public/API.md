@@ -18,13 +18,16 @@ Extract release notes from CHANGELOG.md.
 
 ### API
 
+- [asReleaseNotes](../API/API.asReleaseNotes.md)
 - [extract](../API/API.extract.md)
 - [latest](../API/API.latest.md)
 - [parse](../API/API.parse.md)
 
 ### Options
 
+- [ExtractOptions](../Options/API.ExtractOptions.md)
 - [ParserOptions](../Options/API.ParserOptions.md)
+- [ReleaseNotesOptions](../Options/API.ReleaseNotesOptions.md)
 
 ### Types
 

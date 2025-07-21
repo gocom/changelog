@@ -8,6 +8,6 @@
 
 > **Template** = `string`
 
-Defined in: [types/Template.ts:32](https://github.com/gocom/changelog/blob/dfbd85c4c9fd82309397c2119164c582a7910c7e/src/types/Template.ts#L32)
+Defined in: [types/Template.ts:32](https://github.com/gocom/changelog/blob/6ecf3d82271243a19bf949b1b2aa8e1b05030346/src/types/Template.ts#L32)
 
 Template string.
