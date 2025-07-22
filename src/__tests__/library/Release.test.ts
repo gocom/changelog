@@ -34,6 +34,7 @@ test('basic', () => {
 
   expect(actual).toEqual({
     isPrerelease: false,
+    build: undefined,
     major: 0,
     minor: 1,
     notes: '',
@@ -52,6 +53,7 @@ test('pre-release', () => {
 
   expect(actual).toEqual({
     isPrerelease: true,
+    build: undefined,
     major: 3,
     minor: 12,
     notes: '',
@@ -62,4 +64,37 @@ test('pre-release', () => {
     ],
     version: '3.12.4-alpha.3',
   });
+});
+
+test('build identifier', () => {
+  const actual = getRelease({
+    version: '3.12.4-alpha+build1',
+    notes: '',
+    isPrerelease: true,
+  });
+
+  expect(actual).toEqual({
+    isPrerelease: true,
+    build: [
+      'build1',
+    ],
+    major: 3,
+    minor: 12,
+    notes: '',
+    patch: 4,
+    prerelease: [
+      'alpha',
+    ],
+    version: '3.12.4-alpha+build1',
+  });
+});
+
+test('invalid', () => {
+  const actual = getRelease({
+    version: 'invalid',
+    notes: '',
+    isPrerelease: false,
+  });
+
+  expect(actual).toBeUndefined();
 });

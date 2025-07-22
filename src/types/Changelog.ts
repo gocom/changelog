@@ -34,11 +34,27 @@ import type {Version} from './Version';
 export interface Changelog {
   /**
    * Version the changelog is for.
+   *
+   * Version number in semantic versioning format. If in the changelog document the version number started
+   * with `v` prefix, it will be stripped off.
+   *
+   * @see [Semantic Versioning](https://semver.org/)
+   * @example
+   * Example valid `version` values would include:
+   * ```
+   * 0.1.0
+   * 3.945.12
+   * 1.0.0-beta
+   * 1.0.0-alpha.1
+   * 1.0.0-rc.5
+   * ```
    */
   version: Version
 
   /**
-   * Changelog contents.
+   * Changelog contents, such as release notes.
+   *
+   * Contains the body content from under the version heading, up to the next heading.
    */
   notes: string
 
@@ -49,11 +65,17 @@ export interface Changelog {
 
   /**
    * Content at the start of the title.
+   *
+   * Any custom content from the header line from before the version
+   * number.
    */
   titleStart?: string
 
   /**
    * Content at the end of the title.
+   *
+   * Any custom content from the header line from before the version
+   * number.
    */
   titleEnd?: string
 }

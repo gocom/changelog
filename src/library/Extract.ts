@@ -86,14 +86,34 @@ export const extract = (
  * extracted from the changelog. If there is no version numbers in the given
  * contents, return undefined.
  *
+ * If you want to get some other version from the changelog, see {@link extract}, or {@link parse} if
+ * you want to parse the whole changelog.
+ *
  * @param {ChangelogDocument} contents
  * @return {Changelog|undefined} Changelog for the latest version, or `undefined` if there were no valid versions
  * available in the changelog.
  * @group Library
  * @category API
  * @example
+ * The following would extract version `3.0.0` from the changelog, as it is the greatest version listed:
+ * ```ts
+ * import {latest} from '@gocom/changelog';
+ *
+ * const changelog = latest(`
+ * # Changelog
+ *
+ * ### 2.0.0
+ *
+ * * Change
+ *
+ * ### 3.0.0
+ *
+ * * Change
+ * `);
+ *
+ * console.log(changelog.version);
  * ```
- * ```
+ * The above would log `3.0.0`.
  */
 export const latest = (
   contents: ChangelogDocument

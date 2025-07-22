@@ -53,7 +53,7 @@ v0.4.0
 
 * We did a thing.
 
-## v0.2.0
+## v0.2.0+100
 
 * First line.
 * Second line.
@@ -123,7 +123,7 @@ Migrating to this version might be difficult.
         notes: '* We did a thing.'
       },
       {
-        version: '0.2.0',
+        version: '0.2.0+100',
         isPrerelease: false,
         titleStart: '',
         titleEnd: '',

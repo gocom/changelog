@@ -26,7 +26,7 @@
 import type {Changelog} from './Changelog';
 
 /**
- * Release details.
+ * Detailed release results.
  *
  * @group Library
  * @category Types
@@ -48,7 +48,18 @@ export interface Release extends Changelog {
   patch: number
 
   /**
+   * Build identifier component from the version number.
+   *
+   * Will be `undefined` if the version number did not contain build identifier, an array of build identifier
+   * otherwise.
+   */
+  build?: readonly string[]
+
+  /**
    * Prerelease component from the version number.
+   *
+   * Will be `undefined` if the version number did not contain prerelease component, an array of prerelease identifiers
+   * otherwise.
    */
   prerelease?: readonly (string | number)[]
 }

@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-import {major, minor, patch, prerelease} from 'semver';
+import {parse} from 'semver';
 import type {Release} from '../types/Release';
 import type {Changelog} from '../types/Changelog';
 
@@ -34,19 +34,36 @@ import type {Changelog} from '../types/Changelog';
  * used by {@link asReleaseNotes} function to provide the template variables.
  *
  * @param {Changelog} changelog The changelog to process.
- * @return {Release} Release details.
+ * @return {Release|undefined} Release details, or `undefined` if the given changelog is not valid.
  * @group Library
  * @category API
  */
-export const getRelease = (changelog: Changelog): Release => {
-  const pre = prerelease(changelog.version) || undefined;
+export const getRelease = (changelog: Changelog): Release|undefined => {
+  const version = parse(changelog.version);
 
-  return {
-    ...changelog,
-    isPrerelease: !!pre,
-    major: major(changelog.version),
-    minor: minor(changelog.version),
-    patch: patch(changelog.version),
-    prerelease: pre,
-  };
+  if (version) {
+    const {
+      major,
+      minor,
+      patch,
+      build,
+      prerelease
+    } = version;
+
+    return {
+      ...changelog,
+      isPrerelease: !!prerelease.length,
+      major,
+      minor,
+      patch,
+      build: build.length
+        ? build
+        : undefined,
+      prerelease: prerelease.length
+        ? prerelease
+        : undefined,
+    };
+  }
+
+  return undefined;
 };

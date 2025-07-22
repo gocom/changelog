@@ -31,5 +31,17 @@
  * @group Library
  * @category Types
  * @see [Semantic Versioning](https://semver.org/)
+ * @example
+ * Example values would include:
+ * ```
+ * 0.1.0
+ * 3.945.12
+ * 1.0.0-beta
+ * 1.0.0-alpha.1
+ * 1.0.0-rc.5
+ * ```
  */
-export type Version = string;
+export type Version = string
+  | `${number}.${number}.${number}`
+  | `${number}.${number}.${number}-${string}`
+  | `${number}.${number}.${number}+${string}`;

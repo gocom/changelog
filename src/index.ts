@@ -24,7 +24,10 @@
  */
 
 /**
- * Extract release notes from CHANGELOG.md.
+ * Extract release notes from Markdown formatted changelog document.
+ *
+ * Allows parsing CHANGELOG.md document contents, and extracting release notes from it.
+ * Written in TypeScript, and supports both client-side web browser and Node.js backend usage.
  *
  * @module API
  * @group Library
@@ -32,6 +35,7 @@
  * @see [GitHub](https://github.com/gocom/changelog)
  * @see [Package in npm registry](https://www.npmjs.com/package/@gocom/changelog)
  * @see [Releases](https://github.com/gocom/changelog/releases)
+ * @see [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md)
  */
 
 export {

@@ -33,6 +33,6 @@
  * @group Library
  * @category Types
  * @see [Semantic Versioning](https://semver.org/)
- * @see [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md).
+ * @see [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md)
  */
 export type ChangelogDocument = string;
