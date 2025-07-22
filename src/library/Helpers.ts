@@ -31,7 +31,7 @@
  *
  * @param {string} content
  * @group Library
- * @category API
+ * @category Internal
  */
 export const trim = (content: string) => {
   return content
@@ -42,9 +42,11 @@ export const trim = (content: string) => {
 /**
  * Trims dividers and whitespace from the given content.
  *
+ * Supported dividers include `-` and `|`.
+ *
  * @param {string} content
  * @group Library
- * @category API
+ * @category Internal
  */
 export const trimDividers = (content: string) => {
   return content
@@ -53,12 +55,15 @@ export const trimDividers = (content: string) => {
 };
 
 /**
- * Strips off trailing headings from the given content section.
+ * Converts Markdown heading formatting marker into it's level number.
+ *
+ * Supports Markdown's `=`, `-` and `#` tags that get converted into
+ * `h1` to `h6` HTML heading tags.
  *
  * @param {string} marker
  * @return {number}
  * @group Library
- * @category API
+ * @category Internal
  */
 export const markerToHeadingLevel = (marker: string): number => {
   if (marker.startsWith('=')) {
@@ -75,14 +80,15 @@ export const markerToHeadingLevel = (marker: string): number => {
 /**
  * Strips off trailing headings from the given content section.
  *
- * Removes headings that level (h1-h6) is higher or equal than the
- * given level. Higher heading are not part of the section and should be removed.
+ * Removes headings whose level (h1-h6) is higher or equal than the
+ * given level. Higher headings are not part of the current section and
+ * will be stripped off.
  *
  * @param {number} level
  * @param {string} content
  * @return {string}
  * @group Library
- * @category API
+ * @category Internal
  */
 export const cutAtTrailingHeading = (level: number, content: string): string => {
   const headings = [

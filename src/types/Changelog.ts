@@ -43,9 +43,14 @@ export interface Changelog {
   isPrerelease: boolean
 
   /**
-   * Title.
+   * Content at the start of the title.
    */
-  title?: string
+  titleStart?: string
+
+  /**
+   * Content at the end of the title.
+   */
+  titleEnd?: string
 
   /**
    * Changelog contents.

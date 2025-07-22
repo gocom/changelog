@@ -66,7 +66,8 @@ export interface ReleaseNotesOptions {
    *
    * - `{{isPrerelease}}`
    * - `{{notes}}`
-   * - `{{title}}`
+   * - `{{titleStart}}`
+   * - `{{titleEnd}}`
    * - `{{version}}`
    * - `{{major}}`
    * - `{{minor}}`

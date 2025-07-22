@@ -42,7 +42,7 @@ release.
 Internal versions
 =====
 
-0.4.0
+v0.4.0
 ===
 
 * We did some other thing.
@@ -53,7 +53,7 @@ Internal versions
 
 * We did a thing.
 
-## 0.2.0
+## v0.2.0
 
 * First line.
 * Second line.
@@ -71,7 +71,7 @@ Internal versions
 
 Migrating to this version might be difficult.
 
-## 2.0.0-alpha.1
+## Changes in 2.0.0-alpha.1
 
 * Test.
 
@@ -86,7 +86,8 @@ Migrating to this version might be difficult.
       {
         version: '2.0.0',
         isPrerelease: false,
-        title: '',
+        titleStart: '',
+        titleEnd: '',
         notes: '* Test.\n' +
           '\n' +
           '### Important notes\n' +
@@ -96,37 +97,43 @@ Migrating to this version might be difficult.
       {
         version: '2.0.0-alpha.1',
         isPrerelease: true,
-        title: '',
+        titleStart: 'Changes in',
+        titleEnd: '',
         notes: '* Test.'
       },
       {
         version: '1.0.0',
         isPrerelease: false,
-        title: 'some description',
+        titleStart: '',
+        titleEnd: 'some description',
         notes: '* Initial stable release.'
       },
       {
         version: '0.4.0',
         isPrerelease: false,
-        title: '',
+        titleStart: '',
+        titleEnd: '',
         notes: '* We did some other thing.\n* And something else too.'
       },
       {
         version: '0.3.0',
         isPrerelease: false,
-        title: '',
+        titleStart: '',
+        titleEnd: '',
         notes: '* We did a thing.'
       },
       {
         version: '0.2.0',
         isPrerelease: false,
-        title: '',
+        titleStart: '',
+        titleEnd: '',
         notes: '* First line.\n* Second line.\n* Line with `##` in it.'
       },
       {
         version: '0.1.0',
         isPrerelease: false,
-        title: '',
+        titleStart: '',
+        titleEnd: '',
         notes: '* Initial release.'
       }
     ]

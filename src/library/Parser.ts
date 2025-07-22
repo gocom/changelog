@@ -36,7 +36,7 @@ import {cutAtTrailingHeading, markerToHeadingLevel, trimDividers} from './Helper
  * When passed down to {@link String.split}, we end up with each capture group in a flat array, from where
  * each item can be chunked into grouped objects.
  */
-const sectionsSplitRegex = /^(?:(#{1,6}) ([0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9-_.]+)?)([^\r\n]*)|([0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9-_.]+)?)([^\r\n]*)[\r\n]([=-]+))$/gm;
+const sectionsSplitRegex = /^(?:(#{1,6}) ((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9-_.]+)?)([^\r\n]*)|((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:-[a-z0-9-_.]+)?)([^\r\n]*)[\r\n]([=-]+))$/gmi;
 
 /**
  * Parses the given changelog document content.
@@ -54,17 +54,18 @@ export const parse = (
     .filter((item) => item !== undefined)
     .slice(1);
 
-  const groupBy = 4;
+  const groupBy = 5;
   const results: Changelog[] = [];
 
   for (let i = 0; i < sections.length; i += groupBy) {
     const chunk = sections[i].startsWith('#')
       ? [...sections.slice(i + 1, i + groupBy), ...[sections[i]]]
-      : [sections[i], sections[i+1], sections[i+3], sections[i+2]];
+      : [sections[i], sections[i+1], sections[i+2], sections[i+4], sections[i+3]];
 
     const [
+      titleStart,
       version,
-      title,
+      titleEnd,
       notes,
       marker,
     ] = chunk;
@@ -75,7 +76,8 @@ export const parse = (
       results.push({
         version,
         isPrerelease: !!prerelease(version),
-        title: trimDividers(title),
+        titleStart: trimDividers(titleStart),
+        titleEnd: trimDividers(titleEnd),
         notes: cutAtTrailingHeading(level, notes),
       });
     }
