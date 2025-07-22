@@ -8,6 +8,6 @@
 
 > `const` **defaultReleaseNotesTemplate**: "\n## 🚀 Notes for \{\{version\}\}\n\n\{\{notes\}\}\n"
 
-Defined in: [types/ReleaseNotes.ts:35](https://github.com/gocom/changelog/blob/6ecf3d82271243a19bf949b1b2aa8e1b05030346/src/types/ReleaseNotes.ts#L35)
+Defined in: [types/ReleaseNotes.ts:35](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/ReleaseNotes.ts#L35)
 
 Default release notes template.
