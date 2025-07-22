@@ -6,7 +6,7 @@
 
 # Interface: ParserOptions
 
-Defined in: [types/Parser.ts:37](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Parser.ts#L37)
+Defined in: [types/Parser.ts:37](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Parser.ts#L37)
 
 Parser options.
 
@@ -18,7 +18,7 @@ Available options for [parse](../API/API.parse.md).
 
 > `optional` **after**: `string`
 
-Defined in: [types/Parser.ts:53](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Parser.ts#L53)
+Defined in: [types/Parser.ts:53](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Parser.ts#L53)
 
 Contents to be appended to the extracted changelogs.
 
@@ -28,7 +28,7 @@ Contents to be appended to the extracted changelogs.
 
 > `optional` **before**: `string`
 
-Defined in: [types/Parser.ts:48](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Parser.ts#L48)
+Defined in: [types/Parser.ts:48](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Parser.ts#L48)
 
 Contents to be prepended to the extracted changelogs.
 
@@ -38,7 +38,7 @@ Contents to be prepended to the extracted changelogs.
 
 > `optional` **version**: `string`
 
-Defined in: [types/Parser.ts:43](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Parser.ts#L43)
+Defined in: [types/Parser.ts:43](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Parser.ts#L43)
 
 Version to extract.
 

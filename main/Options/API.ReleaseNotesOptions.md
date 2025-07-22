@@ -6,7 +6,7 @@
 
 # Interface: ReleaseNotesOptions
 
-Defined in: [types/ReleaseNotes.ts:54](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/ReleaseNotes.ts#L54)
+Defined in: [types/ReleaseNotes.ts:54](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/ReleaseNotes.ts#L54)
 
 Release notes options.
 
@@ -18,7 +18,7 @@ Available options for [asReleaseNotes](../API/API.asReleaseNotes.md).
 
 > **changelog**: [`Changelog`](../Types/API.Changelog.md)
 
-Defined in: [types/ReleaseNotes.ts:58](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/ReleaseNotes.ts#L58)
+Defined in: [types/ReleaseNotes.ts:58](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/ReleaseNotes.ts#L58)
 
 Changelog to format as release notes.
 
@@ -28,7 +28,7 @@ Changelog to format as release notes.
 
 > `optional` **template**: `string` \| `string`[]
 
-Defined in: [types/ReleaseNotes.ts:81](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/ReleaseNotes.ts#L81)
+Defined in: [types/ReleaseNotes.ts:82](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/ReleaseNotes.ts#L82)
 
 Template strings.
 
@@ -38,7 +38,8 @@ object and others:
 
 - `{{isPrerelease}}`
 - `{{notes}}`
-- `{{title}}`
+- `{{titleStart}}`
+- `{{titleEnd}}`
 - `{{version}}`
 - `{{major}}`
 - `{{minor}}`
