@@ -23,11 +23,43 @@
  * SOFTWARE.
  */
 
-/**
- * Handlebar's template string.
- *
- * @group Library
- * @category Types
- * @see [Handlebars](https://handlebarsjs.com/)
- */
-export type Template = string;
+import {getRelease} from "../../library/Release";
+
+test('basic', () => {
+  const actual = getRelease({
+    version: '0.1.0',
+    notes: '',
+    isPrerelease: false,
+  });
+
+  expect(actual).toEqual({
+    isPrerelease: false,
+    major: 0,
+    minor: 1,
+    notes: '',
+    patch: 0,
+    prerelease: undefined,
+    version: '0.1.0',
+  });
+});
+
+test('pre-release', () => {
+  const actual = getRelease({
+    version: '3.12.4-alpha.3',
+    notes: '',
+    isPrerelease: true,
+  });
+
+  expect(actual).toEqual({
+    isPrerelease: true,
+    major: 3,
+    minor: 12,
+    notes: '',
+    patch: 4,
+    prerelease: [
+      'alpha',
+      3,
+    ],
+    version: '3.12.4-alpha.3',
+  });
+});

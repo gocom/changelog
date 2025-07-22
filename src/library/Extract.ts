@@ -31,11 +31,41 @@ import type {ExtractOptions} from '../types/Extract';
 /**
  * Extracts the specified version from the given changelog.
  *
+ * The function would extract the specified {@link ExtractOptions.version} from the given Markdown based
+ * changelog provided with the {@link ExtractOptions.contents} option.
+ *
  * @param {ExtractOptions} options Options.
  * @return {Changelog|undefined} Returns changelog for the version, or `undefined`, if the version could not
  * be found from the changelog, or the version number is not a valid semantic version number.
  * @group Library
  * @category API
+ * @example
+ * The following would extract version 0.2.0's notes from the given {@link ExtractOptions.contents}:
+ * ```ts
+ * import {extract} from '@gocom/changelog';
+ *
+ * const changelog = extract({
+ *  version: '0.2.0',
+ *  contents: `
+ * # Changelog
+ *
+ * ## Version 1.3.0
+ *
+ * * Change 1
+ * * Change 2
+ *
+ * ## Version 0.2.0
+ *
+ * * Change 1
+ * * Change 2
+ *
+ * ## Version 0.1.0
+ *
+ * * Initial release.
+ *  `,
+ * });
+ * ```
+ * The `changelog` variable would contain {@link Changelog} object with the details about the requested 0.2.0.
  */
 export const extract = (
   options: ExtractOptions
@@ -53,13 +83,17 @@ export const extract = (
  * Gets the latest version from the given changelog document contents.
  *
  * The versions are sorted based semantic versioning rules, and the latest version is
- * extracted from the changelog. If there is no marked version number in the do
+ * extracted from the changelog. If there is no version numbers in the given
+ * contents, return undefined.
  *
  * @param {ChangelogDocument} contents
  * @return {Changelog|undefined} Changelog for the latest version, or `undefined` if there were no valid versions
  * available in the changelog.
  * @group Library
  * @category API
+ * @example
+ * ```
+ * ```
  */
 export const latest = (
   contents: ChangelogDocument

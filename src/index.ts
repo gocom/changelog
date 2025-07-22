@@ -44,6 +44,10 @@ export {
 } from './library/Parser';
 
 export type {
+  getRelease,
+} from './library/Release';
+
+export type {
   asReleaseNotes,
 } from './library/ReleaseNotes';
 
@@ -60,8 +64,8 @@ export type {
 } from './types/Extract';
 
 export type {
-  ParserOptions,
-} from './types/Parser';
+  Release,
+} from './types/Release';
 
 export type {
   ReleaseNotesOptions,

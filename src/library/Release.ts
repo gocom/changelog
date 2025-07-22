@@ -23,32 +23,30 @@
  * SOFTWARE.
  */
 
-import type {Template} from './Template';
-import type {Version} from './Version';
+import {major, minor, patch, prerelease} from 'semver';
+import type {Release} from '../types/Release';
+import type {Changelog} from '../types/Changelog';
 
 /**
- * Parser options.
+ * Gets the given changelog as expanded release details.
  *
- * Available options for {@link parse}.
+ * Processes the given changelog and returns it with extended number of details. This function is internally also
+ * used by {@link asReleaseNotes} function to provide the template variables.
  *
+ * @param {Changelog} changelog The changelog to process.
+ * @return {Release} Release details.
  * @group Library
- * @category Options
+ * @category API
  */
-export interface ParserOptions {
-  /**
-   * Version to extract.
-   *
-   * If not given, extracts the last version header from the CHANGELOG.md.
-   */
-  version?: Version
+export const getRelease = (changelog: Changelog): Release => {
+  const pre = prerelease(changelog.version) || undefined;
 
-  /**
-   * Contents to be prepended to the extracted changelogs.
-   */
-  before?: Template
-
-  /**
-   * Contents to be appended to the extracted changelogs.
-   */
-  after?: Template
-}
+  return {
+    ...changelog,
+    isPrerelease: !!pre,
+    major: major(changelog.version),
+    minor: minor(changelog.version),
+    patch: patch(changelog.version),
+    prerelease: pre,
+  };
+};

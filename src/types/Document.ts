@@ -24,11 +24,15 @@
  */
 
 /**
- * Markdown formatted changelog document.
+ * Markdown formatted changelog document as a string.
  *
- * In the document, each version is separated by Markdown headings, either h2 or lower.
+ * In the document, each released version is its own section, separated by Markdown headings, followed by the release
+ * notes. The heading should contain the version number in semantic versioning format, and release notes would be
+ * written under the heading.
  *
  * @group Library
  * @category Types
+ * @see [Semantic Versioning](https://semver.org/)
+ * @see [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md).
  */
 export type ChangelogDocument = string;

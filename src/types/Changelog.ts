@@ -38,9 +38,14 @@ export interface Changelog {
   version: Version
 
   /**
+   * Changelog contents.
+   */
+  notes: string
+
+  /**
    * Whether the version is considered pre-release.
    */
-  isPrerelease: boolean
+  isPrerelease?: boolean
 
   /**
    * Content at the start of the title.
@@ -51,9 +56,4 @@ export interface Changelog {
    * Content at the end of the title.
    */
   titleEnd?: string
-
-  /**
-   * Changelog contents.
-   */
-  notes: string
 }

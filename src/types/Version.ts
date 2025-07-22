@@ -26,7 +26,10 @@
 /**
  * Version number.
  *
+ * The specified version number should follow semantic versioning rules.
+ *
  * @group Library
  * @category Types
+ * @see [Semantic Versioning](https://semver.org/)
  */
 export type Version = string;

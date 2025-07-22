@@ -36,4 +36,4 @@
 
 export {
   defaultReleaseNotesTemplate,
-} from './types/ReleaseNotes';
+} from './library/ReleaseNotes';

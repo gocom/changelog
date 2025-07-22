@@ -42,6 +42,10 @@ export interface ExtractOptions {
 
   /**
    * Version to extract.
+   *
+   * The specified version number should follow semantic versioning rules.
+   *
+   * @see [Semantic Versioning](https://semver.org/)
    */
   version: Version
 }

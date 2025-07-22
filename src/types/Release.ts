@@ -23,11 +23,32 @@
  * SOFTWARE.
  */
 
+import type {Changelog} from './Changelog';
+
 /**
- * Handlebar's template string.
+ * Release details.
  *
  * @group Library
  * @category Types
- * @see [Handlebars](https://handlebarsjs.com/)
  */
-export type Template = string;
+export interface Release extends Changelog {
+  /**
+   * Major version number component from the version number.
+   */
+  major: number
+
+  /**
+   * Minor version number component from the version number.
+   */
+  minor: number
+
+  /**
+   * Patch version number component from the version number.
+   */
+  patch: number
+
+  /**
+   * Prerelease component from the version number.
+   */
+  prerelease?: readonly (string | number)[]
+}

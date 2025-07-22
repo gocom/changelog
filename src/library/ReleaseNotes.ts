@@ -24,18 +24,70 @@
  */
 
 import {compile} from 'handlebars';
-import {major, minor, patch} from 'semver';
 import type {ReleaseNotesOptions} from '../types/ReleaseNotes';
-import {defaultReleaseNotesTemplate} from '../types/ReleaseNotes';
+import type {Template} from '../types/Template';
 import {trim} from './Helpers';
+import {getRelease} from './Release';
+
+/**
+ * Default release notes template.
+ *
+ * Contains a Handlebar's template string.
+ *
+ * @group Library
+ * @category API
+ */
+export const defaultReleaseNotesTemplate: Template[] = [`
+{{#if isPrerelease}}
+⚠️ **This is a prerelease for {{major}}.{{minor}}.{{patch}}. This release is not intended for production use.**
+{{/if}}
+`,
+  `{{#if notes}}
+## 🚀 Notes for {{version}}
+
+{{notes}}
+{{/if}}`];
 
 /**
  * Returns the given changelog as a formatted release notes.
+ *
+ * Formats the given {@link ReleaseNotesOptions.changelog} into release notes using Handlebar's template set
+ * with {@link ReleaseNotesOptions.template} option. This function can be used together with {@link extract},
+ * {@link latest} or {@link parse} to format human-readable release notes for released versions.
  *
  * @param {ReleaseNotesOptions} options
  * @return {string}
  * @group Library
  * @category API
+ * @example
+ * The following would extract the latest version, 0.2.0, from the changelog and format it to Markdown
+ * based release notes:
+ * ```ts
+ * import {latest, asReleaseNotes} from '@gocom/changelog';
+ *
+ * const changelog = latest(`
+ * # Changelog
+ *
+ * ## 0.2.0
+ *
+ * * Added a feature A.
+ *
+ * ## 0.1.0
+ *
+ * * Initial release.
+ * `);
+ *
+ * const releaseNotes = asReleaseNotes({
+ *  changelog,
+ *  template: '## Changes in {{version}}\n\n{{notes}}',
+ * });
+ * ```
+ * The `releaseNotes` variable would become:
+ * ```Markdown
+ * ## Changes in 0.2.0
+ *
+ * * Added a feature A.
+ * ```
  */
 export const asReleaseNotes = (
   options: ReleaseNotesOptions
@@ -47,12 +99,7 @@ export const asReleaseNotes = (
     ? rawInput
     : [rawInput];
 
-  const context = {
-    ...options.changelog,
-    major: major(options.changelog.version),
-    minor: minor(options.changelog.version),
-    patch: patch(options.changelog.version),
-  };
+  const context = getRelease(options.changelog);
 
   for (const input of inputs) {
     const template = compile(input);

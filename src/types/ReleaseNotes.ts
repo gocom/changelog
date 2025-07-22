@@ -27,23 +27,6 @@ import type {Template} from './Template';
 import type {Changelog} from './Changelog';
 
 /**
- * Default release notes template.
- *
- * @group Library
- * @category API
- */
-export const defaultReleaseNotesTemplate = [`
-{{#if isPrerelease}}
-⚠️ **This is a prerelease for {{major}}.{{minor}}.{{patch}}. This release is not intended for production use.**
-{{/if}}
-`,
-`{{#if notes}}
-## 🚀 Notes for {{version}}
-
-{{notes}}
-{{/if}}`];
-
-/**
  * Release notes options.
  *
  * Available options for {@link asReleaseNotes}.
@@ -61,8 +44,8 @@ export interface ReleaseNotesOptions {
    * Template strings.
    *
    * The template is passed down to handlebars, allowing the use of variables and handlebars templating language
-   * to format the release notes. Available template variables include the properties from the {@link Changelog}
-   * object and others:
+   * to format the release notes. Available template variables include the properties from the {@link Release}
+   * object:
    *
    * - `{{isPrerelease}}`
    * - `{{notes}}`
@@ -72,10 +55,15 @@ export interface ReleaseNotesOptions {
    * - `{{major}}`
    * - `{{minor}}`
    * - `{{patch}}`
+   * - `{{prerelease}}`
    *
-   * See {@link defaultReleaseNotesTemplate} for the default template. If the given template is an array of templates,
-   * resulting contents are joined together as separate paragraphs. Templates that evaluate empty, are skipped. This
-   * allows wrapping the templates into if conditionals, omitting the template, if it is not needed.
+   * See {@link Private!defaultReleaseNotesTemplate} for the default template that is used if one is not given.
+   * Mote that the default template may change between releases; if consistent output is important, it is recommended
+   * that you always provide your own template.
+   *
+   * If the given template is an array of templates, resulting contents are joined together as separate paragraphs.
+   * Templates that evaluate as empty, are omitted, avoiding additional whitespace being added. This allows wrapping
+   * the templates into if conditionals, omitting the template, if it is not needed.
    *
    * @see [Handlebars](https://handlebarsjs.com/)
    */
