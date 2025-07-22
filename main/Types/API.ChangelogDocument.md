@@ -8,7 +8,7 @@
 
 > **ChangelogDocument** = `string`
 
-Defined in: [types/Document.ts:38](https://github.com/gocom/changelog/blob/32bb28ae14050ef6844283da2cd05b4dcbd93886/src/types/Document.ts#L38)
+Defined in: [types/Document.ts:38](https://github.com/gocom/changelog/blob/72ca68839c81872e5b1bc7a59e76a427f3be654f/src/types/Document.ts#L38)
 
 Markdown formatted changelog document as a string.
 
