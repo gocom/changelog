@@ -36,7 +36,7 @@ import {cutAtTrailingHeading, markerToHeadingLevel, trimDividers} from './Helper
  * When passed down to {@link String.split}, we end up with each capture group in a flat array, from where
  * each item can be chunked into grouped objects.
  */
-const sectionsSplitRegex = /^(?:(#{1,6}) ((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)([^\r\n]*)|((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)([^\r\n]*)[\r\n]([=-]+))$/gmi;
+const sectionsSplitRegex = /^(?: {0,3}(#{1,6}) ((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)([^\r\n]*)|((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)([^\r\n]*)[\r\n] {0,3}([=-]+))$/gmi;
 
 /**
  * Parses the given changelog document content.

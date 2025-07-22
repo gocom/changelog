@@ -139,3 +139,78 @@ Migrating to this version might be difficult.
     ]
   );
 });
+
+test('readme example', () => {
+  const changelog = parse(`
+# Changelog
+
+### 1.1.0-alpha.1
+
+* Change 1.
+* Change 2.
+
+### 1.0.0 🚀
+
+* Initial public release.
+`);
+
+  expect(changelog).toEqual([
+    {
+      version: '1.1.0-alpha.1',
+      isPrerelease: true,
+      titleStart: '',
+      titleEnd: '',
+      notes: '* Change 1.\n* Change 2.'
+    },
+    {
+      version: '1.0.0',
+      isPrerelease: false,
+      titleStart: '',
+      titleEnd: '🚀',
+      notes: '* Initial public release.'
+    }
+  ]);
+});
+
+test('GitHub style Markdown parser supports up-to 3 leading spaces on heading lines', () => {
+  const changelog = parse(`
+   # Changelog
+
+   ### 2.0.0
+
+   * Change 1.
+
+   ### 1.0.0
+
+   * Initial public release.
+`);
+
+  expect(changelog).toEqual([
+    {
+      version: '2.0.0',
+      isPrerelease: false,
+      titleStart: '',
+      titleEnd: '',
+      notes: '   * Change 1.'
+    },
+    {
+      version: '1.0.0',
+      isPrerelease: false,
+      titleStart: '',
+      titleEnd: '',
+      notes: '   * Initial public release.'
+    }
+  ]);
+});
+
+test('Tabs do not count as spaces', () => {
+  const changelog = parse(`
+\t# Changelog
+
+\t### 1.0.0
+
+* Change.
+`);
+
+  expect(changelog).toEqual([]);
+});
