@@ -49,3 +49,19 @@ test('template given', () => {
 
   expect(actual).toBe('0.1.0');
 });
+
+test('template is an array', () => {
+  const actual = asReleaseNotes({
+    changelog: {
+      version: '0.1.0',
+      notes: '* Change 1',
+      isPrerelease: false,
+    },
+    template: [
+      'Hello World!',
+      '{{version}}'
+    ],
+  });
+
+  expect(actual).toBe('Hello World!\n\n0.1.0');
+});

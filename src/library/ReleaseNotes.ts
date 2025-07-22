@@ -23,9 +23,11 @@
  * SOFTWARE.
  */
 
-import type {ReleaseNotesOptions} from '../types/ReleaseNotes';
 import {compile} from 'handlebars';
+import {major, minor, patch} from 'semver';
+import type {ReleaseNotesOptions} from '../types/ReleaseNotes';
 import {defaultReleaseNotesTemplate} from '../types/ReleaseNotes';
+import {trim} from './Helpers';
 
 /**
  * Returns the given changelog as a formatted release notes.
@@ -38,9 +40,31 @@ import {defaultReleaseNotesTemplate} from '../types/ReleaseNotes';
 export const asReleaseNotes = (
   options: ReleaseNotesOptions
 ): string => {
-  const template = compile(options.template ?? defaultReleaseNotesTemplate);
+  const rawInput = options.template ?? defaultReleaseNotesTemplate;
+  const results: string[] = [];
 
-  return template({
+  const inputs = Array.isArray(rawInput)
+    ? rawInput
+    : [rawInput];
+
+  const context = {
     ...options.changelog,
-  });
+    major: major(options.changelog.version),
+    minor: minor(options.changelog.version),
+    patch: patch(options.changelog.version),
+  };
+
+  for (const input of inputs) {
+    const template = compile(input);
+
+    const content = trim(
+      template(context)
+    );
+
+    if (content) {
+      results.push(content);
+    }
+  }
+
+  return results.join("\n\n");
 };

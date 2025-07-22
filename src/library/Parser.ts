@@ -26,6 +26,7 @@
 import {prerelease, valid, rcompare} from 'semver';
 import type {Changelog} from '../types/Changelog';
 import type {ChangelogDocument} from '../types/Document';
+import {cutAtTrailingHeading, markerToHeadingLevel, trimDividers} from './Helpers';
 
 /**
  * Regular expression used for splitting changelog sections into parts.
@@ -83,80 +84,4 @@ export const parse = (
   results.sort((a, b) => rcompare(a.version, b.version));
 
   return results;
-};
-
-/**
- * Trim starting and ending new lines from the given content.
- *
- * We are not using `String.trim` as it would potentially break Markdown code
- * blocks, as those can be created with intending paragraphs with spaces.
- *
- * @param {string} content
- */
-const trim = (content: string) => {
-  return content
-    .replace(/^[\r\n]+/g, '')
-    .replace(/[\r\n]+$/g, '');
-};
-
-/**
- * Trims dividers and whitespace from the given content.
- *
- * @param {string} content
- */
-const trimDividers = (content: string) => {
-  return content
-    .replace(/^[-|\s]+/gm, '')
-    .replace(/\s+$/gm, '');
-};
-
-/**
- * Strips off trailing headings from the given content section.
- *
- * @param {string} marker
- * @return {number}
- */
-const markerToHeadingLevel = (marker: string): number => {
-  if (marker.startsWith('=')) {
-    return 1;
-  }
-
-  if (marker.startsWith('-')) {
-    return 2;
-  }
-
-  return marker.length;
-};
-
-/**
- * Strips off trailing headings from the given content section.
- *
- * Removes headings that level (h1-h6) is higher or equal than the
- * given level. Higher heading are not part of the section and should be removed.
- *
- * @param {number} level
- * @param {string} content
- * @return {string}
- */
-const cutAtTrailingHeading = (level: number, content: string): string => {
-  const headings = [
-    /^(?:# [^\r\n]+|.*[\r\n]=+)$/gm,
-    /^(?:## [^\r\n]+|.*[\r\n]-+)$/gm,
-    /^### [^\r\n]+$/gm,
-    /^#### [^\r\n]+$/gm,
-    /^##### [^\r\n]+$/gm,
-    /^###### [^\r\n]+$/gm,
-  ];
-
-  let result: string = content;
-
-  for (let i = 1; i <= level; i++) {
-    const regex = headings[i - 1];
-
-    if (regex) {
-      result = result.split(regex)[0];
-    }
-  }
-
-  return trim(result);
 };

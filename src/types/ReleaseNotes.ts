@@ -32,11 +32,16 @@ import type {Changelog} from './Changelog';
  * @group Library
  * @category API
  */
-export const defaultReleaseNotesTemplate = `
+export const defaultReleaseNotesTemplate = [`
+{{#if isPrerelease}}
+⚠️ **This is a prerelease for {{major}}.{{minor}}.{{patch}}. This release is not intended for production use.**
+{{/if}}
+`,
+`{{#if notes}}
 ## 🚀 Notes for {{version}}
 
 {{notes}}
-`;
+{{/if}}`];
 
 /**
  * Release notes options.
@@ -53,20 +58,25 @@ export interface ReleaseNotesOptions {
   changelog: Changelog
 
   /**
-   * Template string.
+   * Template strings.
    *
    * The template is passed down to handlebars, allowing the use of variables and handlebars templating language
-   * to format the release notes. Available template variables match the properties in the {@link Changelog}
-   * object, including:
+   * to format the release notes. Available template variables include the properties from the {@link Changelog}
+   * object and others:
    *
    * - `{{isPrerelease}}`
    * - `{{notes}}`
    * - `{{title}}`
    * - `{{version}}`
+   * - `{{major}}`
+   * - `{{minor}}`
+   * - `{{patch}}`
    *
-   * See {@link defaultReleaseNotesTemplate} for the default template.
+   * See {@link defaultReleaseNotesTemplate} for the default template. If the given template is an array of templates,
+   * resulting contents are joined together as separate paragraphs. Templates that evaluate empty, are skipped. This
+   * allows wrapping the templates into if conditionals, omitting the template, if it is not needed.
    *
    * @see [Handlebars](https://handlebarsjs.com/)
    */
-  template?: Template
+  template?: Template|Template[]
 }
