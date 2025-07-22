@@ -6,7 +6,7 @@
 
 # Interface: Changelog
 
-Defined in: [types/Changelog.ts:34](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/Changelog.ts#L34)
+Defined in: [types/Changelog.ts:34](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Changelog.ts#L34)
 
 Changelog result for a version.
 
@@ -16,7 +16,7 @@ Changelog result for a version.
 
 > **isPrerelease**: `boolean`
 
-Defined in: [types/Changelog.ts:43](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/Changelog.ts#L43)
+Defined in: [types/Changelog.ts:43](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Changelog.ts#L43)
 
 Whether the version is considered pre-release.
 
@@ -26,7 +26,7 @@ Whether the version is considered pre-release.
 
 > **notes**: `string`
 
-Defined in: [types/Changelog.ts:53](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/Changelog.ts#L53)
+Defined in: [types/Changelog.ts:53](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Changelog.ts#L53)
 
 Changelog contents.
 
@@ -36,7 +36,7 @@ Changelog contents.
 
 > `optional` **title**: `string`
 
-Defined in: [types/Changelog.ts:48](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/Changelog.ts#L48)
+Defined in: [types/Changelog.ts:48](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Changelog.ts#L48)
 
 Title.
 
@@ -46,6 +46,6 @@ Title.
 
 > **version**: `string`
 
-Defined in: [types/Changelog.ts:38](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/Changelog.ts#L38)
+Defined in: [types/Changelog.ts:38](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/Changelog.ts#L38)
 
 Version the changelog is for.

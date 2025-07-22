@@ -6,7 +6,7 @@
 
 # Interface: ReleaseNotesOptions
 
-Defined in: [types/ReleaseNotes.ts:49](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/ReleaseNotes.ts#L49)
+Defined in: [types/ReleaseNotes.ts:54](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/ReleaseNotes.ts#L54)
 
 Release notes options.
 
@@ -18,7 +18,7 @@ Available options for [asReleaseNotes](../API/API.asReleaseNotes.md).
 
 > **changelog**: [`Changelog`](../Types/API.Changelog.md)
 
-Defined in: [types/ReleaseNotes.ts:53](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/ReleaseNotes.ts#L53)
+Defined in: [types/ReleaseNotes.ts:58](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/ReleaseNotes.ts#L58)
 
 Changelog to format as release notes.
 
@@ -26,22 +26,27 @@ Changelog to format as release notes.
 
 ### template?
 
-> `optional` **template**: `string`
+> `optional` **template**: `string` \| `string`[]
 
-Defined in: [types/ReleaseNotes.ts:71](https://github.com/gocom/changelog/blob/273a35e19d0a002311dc0734fb57ae60d0ae927d/src/types/ReleaseNotes.ts#L71)
+Defined in: [types/ReleaseNotes.ts:81](https://github.com/gocom/changelog/blob/5d7ff763e9deecbf9d2eedbc66ef1099bf6b11d7/src/types/ReleaseNotes.ts#L81)
 
-Template string.
+Template strings.
 
 The template is passed down to handlebars, allowing the use of variables and handlebars templating language
-to format the release notes. Available template variables match the properties in the [Changelog](../Types/API.Changelog.md)
-object, including:
+to format the release notes. Available template variables include the properties from the [Changelog](../Types/API.Changelog.md)
+object and others:
 
 - `{{isPrerelease}}`
 - `{{notes}}`
 - `{{title}}`
 - `{{version}}`
+- `{{major}}`
+- `{{minor}}`
+- `{{patch}}`
 
-See [defaultReleaseNotesTemplate](../API/Private.defaultReleaseNotesTemplate.md) for the default template.
+See [defaultReleaseNotesTemplate](../API/Private.defaultReleaseNotesTemplate.md) for the default template. If the given template is an array of templates,
+resulting contents are joined together as separate paragraphs. Templates that evaluate empty, are skipped. This
+allows wrapping the templates into if conditionals, omitting the template, if it is not needed.
 
 #### See
 
