@@ -6,9 +6,9 @@
 
 # Type Alias: getRelease()
 
-> **getRelease** = (`changelog`) => [`Release`](../Types/API.Release.md)
+> **getRelease** = (`changelog`) => `undefined` \| [`Release`](../Types/API.Release.md)
 
-Defined in: [library/Release.ts:41](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/library/Release.ts#L41)
+Defined in: [library/Release.ts:41](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/library/Release.ts#L41)
 
 Gets the given changelog as expanded release details.
 
@@ -25,6 +25,6 @@ The changelog to process.
 
 ## Returns
 
-[`Release`](../Types/API.Release.md)
+`undefined` \| [`Release`](../Types/API.Release.md)
 
-Release details.
+Release details, or `undefined` if the given changelog is not valid.

@@ -8,7 +8,7 @@
 
 > **ChangelogDocument** = `string`
 
-Defined in: [types/Document.ts:38](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Document.ts#L38)
+Defined in: [types/Document.ts:38](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Document.ts#L38)
 
 Markdown formatted changelog document as a string.
 
@@ -19,4 +19,4 @@ written under the heading.
 ## See
 
  - [Semantic Versioning](https://semver.org/)
- - [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md).
+ - [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md)

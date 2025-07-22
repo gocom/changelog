@@ -6,9 +6,9 @@
 
 # Interface: Release
 
-Defined in: [types/Release.ts:34](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Release.ts#L34)
+Defined in: [types/Release.ts:34](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Release.ts#L34)
 
-Release details.
+Detailed release results.
 
 ## Extends
 
@@ -16,11 +16,24 @@ Release details.
 
 ## Properties
 
+### build?
+
+> `optional` **build**: readonly `string`[]
+
+Defined in: [types/Release.ts:56](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Release.ts#L56)
+
+Build identifier component from the version number.
+
+Will be `undefined` if the version number did not contain build identifier, an array of build identifier
+otherwise.
+
+***
+
 ### isPrerelease?
 
 > `optional` **isPrerelease**: `boolean`
 
-Defined in: [types/Changelog.ts:48](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L48)
+Defined in: [types/Changelog.ts:64](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Changelog.ts#L64)
 
 Whether the version is considered pre-release.
 
@@ -34,7 +47,7 @@ Whether the version is considered pre-release.
 
 > **major**: `number`
 
-Defined in: [types/Release.ts:38](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Release.ts#L38)
+Defined in: [types/Release.ts:38](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Release.ts#L38)
 
 Major version number component from the version number.
 
@@ -44,7 +57,7 @@ Major version number component from the version number.
 
 > **minor**: `number`
 
-Defined in: [types/Release.ts:43](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Release.ts#L43)
+Defined in: [types/Release.ts:43](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Release.ts#L43)
 
 Minor version number component from the version number.
 
@@ -54,9 +67,11 @@ Minor version number component from the version number.
 
 > **notes**: `string`
 
-Defined in: [types/Changelog.ts:43](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L43)
+Defined in: [types/Changelog.ts:59](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Changelog.ts#L59)
 
-Changelog contents.
+Changelog contents, such as release notes.
+
+Contains the body content from under the version heading, up to the next heading.
 
 #### Inherited from
 
@@ -68,7 +83,7 @@ Changelog contents.
 
 > **patch**: `number`
 
-Defined in: [types/Release.ts:48](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Release.ts#L48)
+Defined in: [types/Release.ts:48](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Release.ts#L48)
 
 Patch version number component from the version number.
 
@@ -78,9 +93,12 @@ Patch version number component from the version number.
 
 > `optional` **prerelease**: readonly (`string` \| `number`)[]
 
-Defined in: [types/Release.ts:53](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Release.ts#L53)
+Defined in: [types/Release.ts:64](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Release.ts#L64)
 
 Prerelease component from the version number.
+
+Will be `undefined` if the version number did not contain prerelease component, an array of prerelease identifiers
+otherwise.
 
 ***
 
@@ -88,9 +106,12 @@ Prerelease component from the version number.
 
 > `optional` **titleEnd**: `string`
 
-Defined in: [types/Changelog.ts:58](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L58)
+Defined in: [types/Changelog.ts:80](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Changelog.ts#L80)
 
 Content at the end of the title.
+
+Any custom content from the header line from before the version
+number.
 
 #### Inherited from
 
@@ -102,9 +123,12 @@ Content at the end of the title.
 
 > `optional` **titleStart**: `string`
 
-Defined in: [types/Changelog.ts:53](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L53)
+Defined in: [types/Changelog.ts:72](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Changelog.ts#L72)
 
 Content at the start of the title.
+
+Any custom content from the header line from before the version
+number.
 
 #### Inherited from
 
@@ -116,9 +140,27 @@ Content at the start of the title.
 
 > **version**: `string`
 
-Defined in: [types/Changelog.ts:38](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L38)
+Defined in: [types/Changelog.ts:52](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Changelog.ts#L52)
 
 Version the changelog is for.
+
+Version number in semantic versioning format. If in the changelog document the version number started
+with `v` prefix, it will be stripped off.
+
+#### See
+
+[Semantic Versioning](https://semver.org/)
+
+#### Example
+
+Example valid `version` values would include:
+```
+0.1.0
+3.945.12
+1.0.0-beta
+1.0.0-alpha.1
+1.0.0-rc.5
+```
 
 #### Inherited from
 

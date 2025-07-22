@@ -6,9 +6,9 @@
 
 # Type Alias: Version
 
-> **Version** = `string`
+> **Version** = `string` \| `` `${number}.${number}.${number}` `` \| `` `${number}.${number}.${number}-${string}` `` \| `` `${number}.${number}.${number}+${string}` ``
 
-Defined in: [types/Version.ts:35](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Version.ts#L35)
+Defined in: [types/Version.ts:44](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/types/Version.ts#L44)
 
 Version number.
 
@@ -17,3 +17,14 @@ The specified version number should follow semantic versioning rules.
 ## See
 
 [Semantic Versioning](https://semver.org/)
+
+## Example
+
+Example values would include:
+```
+0.1.0
+3.945.12
+1.0.0-beta
+1.0.0-alpha.1
+1.0.0-rc.5
+```

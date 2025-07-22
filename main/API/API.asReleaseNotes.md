@@ -8,7 +8,7 @@
 
 > **asReleaseNotes** = (`options`) => `string`
 
-Defined in: [library/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/library/ReleaseNotes.ts#L92)
+Defined in: [library/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/library/ReleaseNotes.ts#L92)
 
 Returns the given changelog as a formatted release notes.
 
