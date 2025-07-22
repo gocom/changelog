@@ -35,7 +35,7 @@
  * @see [GitHub](https://github.com/gocom/changelog)
  * @see [Package in npm registry](https://www.npmjs.com/package/@gocom/changelog)
  * @see [Releases](https://github.com/gocom/changelog/releases)
- * @see [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md)
+ * @see [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md?plain=1)
  */
 
 export {
