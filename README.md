@@ -1,13 +1,11 @@
 Changelog
 =====
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/gocom/changelog/blob/main/LICENSE) ![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)
+[![npm](https://img.shields.io/npm/v/%40gocom%2Fchangelog)](https://www.npmjs.com/package/@gocom/changelog) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gocom_changelog&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gocom_changelog) [![MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/gocom/changelog/blob/main/LICENSE) ![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)
 
 Extract version changelogs from CHANGELOG.md. The library enables parsing Markdown formatted changelog documents,
 and extracting details and release notes from the contents. Written in TypeScript, and supports both client-side
 web browser and Node.js backend usage.
-
-**Work in progress, not yet installable.**
 
 ⚡ Install
 -----

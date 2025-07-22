@@ -3,6 +3,6 @@
 The changelog will also contain upcoming versions. Refer to tags, GitHub releases or npm registry for the latest
 release.
 
-## 0.1.0
+## 0.1.0-alpha.1
 
-* Initial release.
+* First alpha release.
