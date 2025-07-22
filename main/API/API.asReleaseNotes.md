@@ -8,11 +8,11 @@
 
 > **asReleaseNotes** = (`options`) => `string`
 
-Defined in: [library/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/library/ReleaseNotes.ts#L92)
+Defined in: [library/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/e24f91cb230cdc8fe362bb59b7308549663a8b77/src/library/ReleaseNotes.ts#L92)
 
-Returns the given changelog as a formatted release notes.
+Returns the given version changelog as formatted release notes.
 
-Formats the given [ReleaseNotesOptions.changelog](../Options/API.ReleaseNotesOptions.md#changelog) into release notes using Handlebar's template set
+Formats the given [ReleaseNotesOptions.changelog](../Options/API.ReleaseNotesOptions.md#changelog) into release notes using a Handlebar template set
 with [ReleaseNotesOptions.template](../Options/API.ReleaseNotesOptions.md#template) option. This function can be used together with [extract](API.extract.md),
 [latest](API.latest.md) or [parse](API.parse.md) to format human-readable release notes for released versions.
 
@@ -22,9 +22,13 @@ with [ReleaseNotesOptions.template](../Options/API.ReleaseNotesOptions.md#templa
 
 [`ReleaseNotesOptions`](../Options/API.ReleaseNotesOptions.md)
 
+Options.
+
 ## Returns
 
 `string`
+
+Formatted release notes.
 
 ## Example
 

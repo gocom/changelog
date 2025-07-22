@@ -8,7 +8,7 @@
 
 > **getRelease** = (`changelog`) => `undefined` \| [`Release`](../Types/API.Release.md)
 
-Defined in: [library/Release.ts:41](https://github.com/gocom/changelog/blob/21d7e94d349fc49650b58fae1fc875c29931421f/src/library/Release.ts#L41)
+Defined in: [library/Release.ts:64](https://github.com/gocom/changelog/blob/e24f91cb230cdc8fe362bb59b7308549663a8b77/src/library/Release.ts#L64)
 
 Gets the given changelog as expanded release details.
 
@@ -28,3 +28,28 @@ The changelog to process.
 `undefined` \| [`Release`](../Types/API.Release.md)
 
 Release details, or `undefined` if the given changelog is not valid.
+
+## Example
+
+Takes the given [Changelog](../Types/API.Changelog.md) and returns [Release](../Types/API.Release.md) object:
+```ts
+import {getRelease} from '@gocom/changelog';
+
+const release = getRelease({
+ version: '2.3.5',
+ notes: '* Change.',
+});
+```
+The above `release` would become:
+```ts
+export {
+ isPrerelease: false,
+ build: undefined,
+ major: 2,
+ minor: 3,
+ notes: '* Change.',
+ patch: 5,
+ prerelease: undefined,
+ version: '2.3.5',
+};
+```
