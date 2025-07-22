@@ -6,17 +6,21 @@
 
 # Interface: Changelog
 
-Defined in: [types/Changelog.ts:34](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Changelog.ts#L34)
+Defined in: [types/Changelog.ts:34](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L34)
 
 Changelog result for a version.
 
+## Extended by
+
+- [`Release`](API.Release.md)
+
 ## Properties
 
-### isPrerelease
+### isPrerelease?
 
-> **isPrerelease**: `boolean`
+> `optional` **isPrerelease**: `boolean`
 
-Defined in: [types/Changelog.ts:43](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Changelog.ts#L43)
+Defined in: [types/Changelog.ts:48](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L48)
 
 Whether the version is considered pre-release.
 
@@ -26,7 +30,7 @@ Whether the version is considered pre-release.
 
 > **notes**: `string`
 
-Defined in: [types/Changelog.ts:58](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Changelog.ts#L58)
+Defined in: [types/Changelog.ts:43](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L43)
 
 Changelog contents.
 
@@ -36,7 +40,7 @@ Changelog contents.
 
 > `optional` **titleEnd**: `string`
 
-Defined in: [types/Changelog.ts:53](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Changelog.ts#L53)
+Defined in: [types/Changelog.ts:58](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L58)
 
 Content at the end of the title.
 
@@ -46,7 +50,7 @@ Content at the end of the title.
 
 > `optional` **titleStart**: `string`
 
-Defined in: [types/Changelog.ts:48](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Changelog.ts#L48)
+Defined in: [types/Changelog.ts:53](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L53)
 
 Content at the start of the title.
 
@@ -56,6 +60,6 @@ Content at the start of the title.
 
 > **version**: `string`
 
-Defined in: [types/Changelog.ts:38](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Changelog.ts#L38)
+Defined in: [types/Changelog.ts:38](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Changelog.ts#L38)
 
 Version the changelog is for.

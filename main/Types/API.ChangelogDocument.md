@@ -8,8 +8,15 @@
 
 > **ChangelogDocument** = `string`
 
-Defined in: [types/Document.ts:34](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Document.ts#L34)
+Defined in: [types/Document.ts:38](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Document.ts#L38)
 
-Markdown formatted changelog document.
+Markdown formatted changelog document as a string.
 
-In the document, each version is separated by Markdown headings, either h2 or lower.
+In the document, each released version is its own section, separated by Markdown headings, followed by the release
+notes. The heading should contain the version number in semantic versioning format, and release notes would be
+written under the heading.
+
+## See
+
+ - [Semantic Versioning](https://semver.org/)
+ - [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md).

@@ -8,6 +8,12 @@
 
 > **Version** = `string`
 
-Defined in: [types/Version.ts:32](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Version.ts#L32)
+Defined in: [types/Version.ts:35](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Version.ts#L35)
 
 Version number.
+
+The specified version number should follow semantic versioning rules.
+
+## See
+
+[Semantic Versioning](https://semver.org/)

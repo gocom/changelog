@@ -19,6 +19,7 @@ Extract release notes from CHANGELOG.md.
 ### API
 
 - [asReleaseNotes](../API/API.asReleaseNotes.md)
+- [getRelease](../API/API.getRelease.md)
 - [extract](../API/API.extract.md)
 - [latest](../API/API.latest.md)
 - [parse](../API/API.parse.md)
@@ -26,12 +27,12 @@ Extract release notes from CHANGELOG.md.
 ### Options
 
 - [ExtractOptions](../Options/API.ExtractOptions.md)
-- [ParserOptions](../Options/API.ParserOptions.md)
 - [ReleaseNotesOptions](../Options/API.ReleaseNotesOptions.md)
 
 ### Types
 
 - [Changelog](../Types/API.Changelog.md)
+- [Release](../Types/API.Release.md)
 - [ChangelogDocument](../Types/API.ChangelogDocument.md)
 - [Template](../Types/API.Template.md)
 - [Version](../Types/API.Version.md)

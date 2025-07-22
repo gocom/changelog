@@ -8,6 +8,10 @@
 
 > **Template** = `string`
 
-Defined in: [types/Template.ts:32](https://github.com/gocom/changelog/blob/d833f9f4723e9cd72f6aee7d9bd8b3ae0eed8089/src/types/Template.ts#L32)
+Defined in: [types/Template.ts:33](https://github.com/gocom/changelog/blob/a821a646e6a7d9dede70692258a7056e2e656088/src/types/Template.ts#L33)
 
-Template string.
+Handlebar's template string.
+
+## See
+
+[Handlebars](https://handlebarsjs.com/)
