@@ -49,14 +49,14 @@ export const defaultReleaseNotesTemplate: Template[] = [`
 {{/if}}`];
 
 /**
- * Returns the given changelog as a formatted release notes.
+ * Returns the given version changelog as formatted release notes.
  *
- * Formats the given {@link ReleaseNotesOptions.changelog} into release notes using Handlebar's template set
+ * Formats the given {@link ReleaseNotesOptions.changelog} into release notes using a Handlebar template set
  * with {@link ReleaseNotesOptions.template} option. This function can be used together with {@link extract},
  * {@link latest} or {@link parse} to format human-readable release notes for released versions.
  *
- * @param {ReleaseNotesOptions} options
- * @return {string}
+ * @param {ReleaseNotesOptions} options Options.
+ * @return {string} Formatted release notes.
  * @group Library
  * @category API
  * @example

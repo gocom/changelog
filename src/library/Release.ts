@@ -37,6 +37,29 @@ import type {Changelog} from '../types/Changelog';
  * @return {Release|undefined} Release details, or `undefined` if the given changelog is not valid.
  * @group Library
  * @category API
+ * @example
+ * Takes the given {@link Changelog} and returns {@link Release} object:
+ * ```ts
+ * import {getRelease} from '@gocom/changelog';
+ *
+ * const release = getRelease({
+ *  version: '2.3.5',
+ *  notes: '* Change.',
+ * });
+ * ```
+ * The above `release` would become:
+ * ```ts
+ * export {
+ *  isPrerelease: false,
+ *  build: undefined,
+ *  major: 2,
+ *  minor: 3,
+ *  notes: '* Change.',
+ *  patch: 5,
+ *  prerelease: undefined,
+ *  version: '2.3.5',
+ * };
+ * ```
  */
 export const getRelease = (changelog: Changelog): Release|undefined => {
   const version = parse(changelog.version);
