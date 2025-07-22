@@ -16,7 +16,7 @@ Written in TypeScript, and supports both client-side web browser and Node.js bac
  - [GitHub](https://github.com/gocom/changelog)
  - [Package in npm registry](https://www.npmjs.com/package/@gocom/changelog)
  - [Releases](https://github.com/gocom/changelog/releases)
- - [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md)
+ - [Example CHANGELOG.md](https://github.com/gocom/changelog/blob/main/CHANGELOG.md?plain=1)
 
 ## Library
 
