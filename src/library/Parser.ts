@@ -29,16 +29,6 @@ import type {ChangelogDocument} from '../types/Document';
 import {cutAtTrailingHeading, markerToHeadingLevel, trimDividers} from './Helpers';
 
 /**
- * Regular expression used for splitting changelog sections into parts.
- *
- * The regex looks for version number heading from the Markdown content, and splits the document by them.
- *
- * When passed down to {@link String.split}, we end up with each capture group in a flat array, from where
- * each item can be chunked into grouped objects.
- */
-const sectionsSplitRegex = /^(?: {0,3}(#{1,6}) ((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)([^\r\n]*)|((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)([^\r\n]*)[\r\n] {0,3}([=-]+))$/gmi;
-
-/**
  * Parses the given changelog document content.
  *
  * Extracts full changelog per each version from the given Markdown formatted changelog document. In the document,
@@ -97,8 +87,14 @@ const sectionsSplitRegex = /^(?: {0,3}(#{1,6}) ((?:[^\r\n]+ )?)v?([0-9]+\.[0-9]+
 export const parse = (
   contents: ChangelogDocument
 ): Changelog[] => {
+  const level = findHeadingLevel(contents);
+
+  if (!level) {
+    return [];
+  }
+
   const sections = contents
-    .split(sectionsSplitRegex)
+    .split(createSectionsSplitRegex(level))
     .filter((item) => item !== undefined)
     .slice(1);
 
@@ -115,12 +111,9 @@ export const parse = (
       version,
       titleEnd,
       notes,
-      marker,
     ] = chunk;
 
     if (valid(version)) {
-      const level = markerToHeadingLevel(marker);
-
       results.push({
         version,
         isPrerelease: !!prerelease(version),
@@ -134,4 +127,88 @@ export const parse = (
   results.sort((a, b) => rcompare(a.version, b.version));
 
   return results;
+};
+
+/**
+ * Finds the heading level version numbers are at in the changelog document.
+ *
+ * Finds the first heading with valid version number in it, and returns it's heading level. This
+ * can then be used to parse the document, only picking up version number of the same heading level.
+ *
+ * Only picking specific heading level allows changelog authors to include version number strings in subheadings,
+ * without them ending up being picked up as version number headings.
+ *
+ * @param contents
+ * @group Library
+ * @category Internal
+ */
+const findHeadingLevel = (contents: ChangelogDocument): number|undefined => {
+  const sections = contents
+    .split(createSectionsSplitRegex())
+    .filter((item) => item !== undefined)
+    .slice(1);
+
+  const groupBy = 5;
+
+  for (let i = 0; i < sections.length; i += groupBy) {
+    const chunk = sections[i].startsWith('#')
+      ? [sections[i+2], sections[i]]
+      : [sections[i+1], sections[i+3]];
+
+    const [
+      version,
+      marker,
+    ] = chunk;
+
+    if (valid(version)) {
+      return markerToHeadingLevel(marker);
+    }
+  }
+
+  return undefined;
+};
+
+/**
+ * Creates section split regex using a specific heading level.
+ *
+ * Regular expression used for splitting changelog sections into parts. The regex looks for version number heading
+ * from the Markdown content, and splits the document by them. When passed down to {@link String.split}, we end up
+ * with each capture group in a flat array, from where each item can be chunked into grouped objects.
+ *
+ * If no level is given, looks for any heading. If level is given, only looks for version headings of that specific
+ * heading level.
+ *
+ * @param {number|undefined} level The heading level to
+ * @return RegExp
+ * @group Library
+ * @category Internal
+ */
+const createSectionsSplitRegex = (level?: number) => {
+  const heading = '((?:[^\\r\\n]+ )?)v?([0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][a-z0-9-_.+]+)?)((?: [^\\r\\n]+)?)';
+
+  if (level === undefined) {
+    return new RegExp(
+      `^(?: {0,3}(#{1,6}) ${heading}|${heading}[\r\n] {0,3}([=-]+))$`,
+      'gmi'
+    );
+  }
+
+  if (level === 1) {
+    return new RegExp(
+      `^(?: {0,3}(#) ${heading}|${heading}[\r\n] {0,3}(=+))$`,
+      'gmi'
+    );
+  }
+
+  if (level === 2) {
+    return new RegExp(
+      `^(?: {0,3}(##) ${heading}|${heading}[\r\n] {0,3}(-+))$`,
+      'gmi'
+    );
+  }
+
+  return new RegExp(
+    `^ {0,3}(#{${Number(level)}}) ${heading}$`,
+    'gmi'
+  );
 };

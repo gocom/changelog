@@ -35,7 +35,8 @@ release.
 1.0
 =====
 
-## 1.0.0 - some description
+1.0.0 - some description
+---
 
 * Initial stable release.
 
@@ -61,7 +62,7 @@ v0.4.0
 
 ### 0.1.0
 
-* Initial release.
+* Change.
 
 ## 2.0.0
 
@@ -109,13 +110,6 @@ Migrating to this version might be difficult.
         notes: '* Initial stable release.'
       },
       {
-        version: '0.4.0',
-        isPrerelease: false,
-        titleStart: '',
-        titleEnd: '',
-        notes: '* We did some other thing.\n* And something else too.'
-      },
-      {
         version: '0.3.0',
         isPrerelease: false,
         titleStart: '',
@@ -127,15 +121,8 @@ Migrating to this version might be difficult.
         isPrerelease: false,
         titleStart: '',
         titleEnd: '',
-        notes: '* First line.\n* Second line.\n* Line with `##` in it.'
+        notes: '* First line.\n* Second line.\n* Line with `##` in it.\n\n### 0.1.0\n\n* Change.'
       },
-      {
-        version: '0.1.0',
-        isPrerelease: false,
-        titleStart: '',
-        titleEnd: '',
-        notes: '* Initial release.'
-      }
     ]
   );
 });
@@ -213,4 +200,37 @@ test('Tabs do not count as spaces', () => {
 `);
 
   expect(changelog).toEqual([]);
+});
+
+test('uses h1', () => {
+  const actual = parse(`
+2.0.0
+=====
+
+* Change.
+
+1.0.0
+=====
+
+* Change.
+`);
+
+  expect(actual).toEqual(
+    [
+      {
+        version: '2.0.0',
+        isPrerelease: false,
+        titleStart: '',
+        titleEnd: '',
+        notes: '* Change.',
+      },
+      {
+        version: '1.0.0',
+        isPrerelease: false,
+        titleStart: '',
+        titleEnd: '',
+        notes: '* Change.',
+      },
+    ]
+  );
 });
