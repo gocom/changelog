@@ -31,3 +31,13 @@
  * @see [Handlebars](https://handlebarsjs.com/)
  */
 export type Template = string;
+
+/**
+ * Handlebar template variables.
+ *
+ * @group Library
+ * @category Types
+ */
+export interface TemplateVariables {
+  [key: string]: any // eslint-disable-line
+}

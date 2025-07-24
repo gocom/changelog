@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-import type {Template} from './Template';
+import type {Template, TemplateVariables} from './Template';
 import type {Changelog} from './Changelog';
 
 /**
@@ -68,4 +68,26 @@ export interface ReleaseNotesOptions {
    * @see [Handlebars](https://handlebarsjs.com/)
    */
   template?: Template|Template[]
+
+  /**
+   * Custom variables passed down to the template.
+   *
+   * Allows adding custom template variables that are passed down to Handlebars template.
+   *
+   * @example
+   * Allows passing any values to the template. Takes an object of key-value pairs:
+   * ```ts
+   * {
+   *  package: "example-package"
+   * }
+   * ```
+   * The `name` can then be accessed through the {@link ReleaseNotesOptions.template} option's
+   * Handlebar template:
+   * ```markdown
+   * Install with npm:
+   *
+   *     npm {{package}}:^{{version}}
+   * ```
+   */
+  variables?: TemplateVariables
 }

@@ -105,7 +105,10 @@ export const asReleaseNotes = (
     const template = compile(input);
 
     const content = trim(
-      template(context)
+      template({
+        ...context,
+        ...options.variables,
+      })
     );
 
     if (content) {
