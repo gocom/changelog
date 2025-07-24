@@ -23,8 +23,8 @@ Written in TypeScript, and supports both client-side web browser and Node.js bac
 ### API
 
 - [asReleaseNotes](../API/API.asReleaseNotes.md)
-- [getRelease](../API/API.getRelease.md)
 - [extract](../API/API.extract.md)
+- [getRelease](../API/API.getRelease.md)
 - [latest](../API/API.latest.md)
 - [parse](../API/API.parse.md)
 

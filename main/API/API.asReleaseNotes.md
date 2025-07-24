@@ -4,11 +4,11 @@
 
 [@gocom/changelog](../README.md) / [API](../Public/API.md) / asReleaseNotes
 
-# Type Alias: asReleaseNotes()
+# Function: asReleaseNotes()
 
-> **asReleaseNotes** = (`options`) => `string`
+> **asReleaseNotes**(`options`): `string`
 
-Defined in: [library/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/c300ceda8a5cb6aad0ac92a8076ab894cbc94c3c/src/library/ReleaseNotes.ts#L92)
+Defined in: [library/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/5e2dbdeba0e07692fbed65ae5e6a5dd29db1e36c/src/library/ReleaseNotes.ts#L92)
 
 Returns the given version changelog as formatted release notes.
 

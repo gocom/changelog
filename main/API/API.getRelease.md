@@ -4,11 +4,11 @@
 
 [@gocom/changelog](../README.md) / [API](../Public/API.md) / getRelease
 
-# Type Alias: getRelease()
+# Function: getRelease()
 
-> **getRelease** = (`changelog`) => `undefined` \| [`Release`](../Types/API.Release.md)
+> **getRelease**(`changelog`): `undefined` \| [`Release`](../Types/API.Release.md)
 
-Defined in: [library/Release.ts:64](https://github.com/gocom/changelog/blob/c300ceda8a5cb6aad0ac92a8076ab894cbc94c3c/src/library/Release.ts#L64)
+Defined in: [library/Release.ts:64](https://github.com/gocom/changelog/blob/5e2dbdeba0e07692fbed65ae5e6a5dd29db1e36c/src/library/Release.ts#L64)
 
 Gets the given changelog as expanded release details.
 
