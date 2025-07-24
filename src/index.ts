@@ -77,6 +77,7 @@ export type {
 
 export type {
   Template,
+  TemplateVariables,
 } from './types/Template';
 
 export type {
