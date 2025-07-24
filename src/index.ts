@@ -47,11 +47,11 @@ export {
   parse,
 } from './library/Parser';
 
-export type {
+export {
   getRelease,
 } from './library/Release';
 
-export type {
+export {
   asReleaseNotes,
 } from './library/ReleaseNotes';
 
