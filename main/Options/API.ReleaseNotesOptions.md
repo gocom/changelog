@@ -6,7 +6,7 @@
 
 # Interface: ReleaseNotesOptions
 
-Defined in: [types/ReleaseNotes.ts:37](https://github.com/gocom/changelog/blob/d7610e18677cf5f8af9dd71b6bce7f7fdfcc40fa/src/types/ReleaseNotes.ts#L37)
+Defined in: [types/ReleaseNotes.ts:37](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/ReleaseNotes.ts#L37)
 
 Release notes options.
 
@@ -18,7 +18,7 @@ Available options for [asReleaseNotes](../API/API.asReleaseNotes.md).
 
 > **changelog**: [`Changelog`](../Types/API.Changelog.md)
 
-Defined in: [types/ReleaseNotes.ts:41](https://github.com/gocom/changelog/blob/d7610e18677cf5f8af9dd71b6bce7f7fdfcc40fa/src/types/ReleaseNotes.ts#L41)
+Defined in: [types/ReleaseNotes.ts:41](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/ReleaseNotes.ts#L41)
 
 Changelog to format as release notes.
 
@@ -28,7 +28,7 @@ Changelog to format as release notes.
 
 > `optional` **template**: `string` \| `string`[]
 
-Defined in: [types/ReleaseNotes.ts:70](https://github.com/gocom/changelog/blob/d7610e18677cf5f8af9dd71b6bce7f7fdfcc40fa/src/types/ReleaseNotes.ts#L70)
+Defined in: [types/ReleaseNotes.ts:70](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/ReleaseNotes.ts#L70)
 
 Template strings.
 
@@ -57,3 +57,31 @@ the templates into if conditionals, omitting the template, if it is not needed.
 #### See
 
 [Handlebars](https://handlebarsjs.com/)
+
+***
+
+### variables?
+
+> `optional` **variables**: `TemplateVariables`
+
+Defined in: [types/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/ReleaseNotes.ts#L92)
+
+Custom variables passed down to the template.
+
+Allows adding custom template variables that are passed down to Handlebars template.
+
+#### Example
+
+Allows passing any values to the template. Takes an object of key-value pairs:
+```ts
+{
+ package: "example-package"
+}
+```
+The `name` can then be accessed through the [ReleaseNotesOptions.template](#template) option's
+Handlebar template:
+```markdown
+Install with npm:
+
+    npm {{package}}:^{{version}}
+```

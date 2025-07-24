@@ -6,7 +6,7 @@
 
 # Interface: ExtractOptions
 
-Defined in: [types/Extract.ts:37](https://github.com/gocom/changelog/blob/d7610e18677cf5f8af9dd71b6bce7f7fdfcc40fa/src/types/Extract.ts#L37)
+Defined in: [types/Extract.ts:37](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/Extract.ts#L37)
 
 Extract options.
 
@@ -18,7 +18,7 @@ Available options for [extract](../API/API.extract.md).
 
 > **contents**: `string`
 
-Defined in: [types/Extract.ts:41](https://github.com/gocom/changelog/blob/d7610e18677cf5f8af9dd71b6bce7f7fdfcc40fa/src/types/Extract.ts#L41)
+Defined in: [types/Extract.ts:41](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/Extract.ts#L41)
 
 Source changelog document contents to parse.
 
@@ -28,7 +28,7 @@ Source changelog document contents to parse.
 
 > **version**: `string`
 
-Defined in: [types/Extract.ts:50](https://github.com/gocom/changelog/blob/d7610e18677cf5f8af9dd71b6bce7f7fdfcc40fa/src/types/Extract.ts#L50)
+Defined in: [types/Extract.ts:50](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/types/Extract.ts#L50)
 
 Version to extract.
 
