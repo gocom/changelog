@@ -37,6 +37,7 @@ Written in TypeScript, and supports both client-side web browser and Node.js bac
 
 - [Changelog](../Types/API.Changelog.md)
 - [Release](../Types/API.Release.md)
+- [TemplateVariables](../Types/API.TemplateVariables.md)
 - [ChangelogDocument](../Types/API.ChangelogDocument.md)
 - [Template](../Types/API.Template.md)
 - [Version](../Types/API.Version.md)

@@ -8,7 +8,7 @@
 
 > **getRelease** = (`changelog`) => `undefined` \| [`Release`](../Types/API.Release.md)
 
-Defined in: [library/Release.ts:64](https://github.com/gocom/changelog/blob/bdc8785c3213612582f22b74d909843e9b915f52/src/library/Release.ts#L64)
+Defined in: [library/Release.ts:64](https://github.com/gocom/changelog/blob/4f9140d71f1dccdcb9738f55129400a16f19362e/src/library/Release.ts#L64)
 
 Gets the given changelog as expanded release details.
 
