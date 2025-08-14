@@ -8,7 +8,7 @@
 
 > **parse**(`contents`): [`Changelog`](../Types/API.Changelog.md)[]
 
-Defined in: [library/Parser.ts:87](https://github.com/gocom/changelog/blob/5e2dbdeba0e07692fbed65ae5e6a5dd29db1e36c/src/library/Parser.ts#L87)
+Defined in: [library/Parser.ts:87](https://github.com/gocom/changelog/blob/d427b90e897d313546949939f234807dde0c823c/src/library/Parser.ts#L87)
 
 Parses the given changelog document content.
 
