@@ -3,6 +3,10 @@
 The changelog will also contain upcoming versions. Refer to tags, GitHub releases or npm registry for the latest
 release.
 
+## 0.1.0-alpha.5
+
+* No code changes, testing trusted publishing from CI.
+
 ## 0.1.0-alpha.4
 
 * Fix `getRelease` and `asReleaseNotes` exports. They were accidentally exported as only types.
