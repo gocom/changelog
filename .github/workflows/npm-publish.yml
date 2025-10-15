@@ -51,3 +51,4 @@ jobs:
 
       - name: Publish
         run: npm publish --provenance --access public --tag ${{ steps.meta.outputs.tag }}
+        if: ${{ vars.SKIP_PUBLISH != 'true' }}
