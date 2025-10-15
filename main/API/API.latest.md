@@ -8,7 +8,7 @@
 
 > **latest**(`contents`): [`Changelog`](../Types/API.Changelog.md) \| `undefined`
 
-Defined in: [library/Extract.ts:118](https://github.com/gocom/changelog/blob/cc3b7d1c5efcd58c3abc117b9a9e3a34830f5b86/src/library/Extract.ts#L118)
+Defined in: [library/Extract.ts:118](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/library/Extract.ts#L118)
 
 Gets the latest version from the given changelog document contents.
 

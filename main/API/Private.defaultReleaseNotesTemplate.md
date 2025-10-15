@@ -8,7 +8,7 @@
 
 > `const` **defaultReleaseNotesTemplate**: [`Template`](../Types/API.Template.md)[]
 
-Defined in: [library/ReleaseNotes.ts:40](https://github.com/gocom/changelog/blob/cc3b7d1c5efcd58c3abc117b9a9e3a34830f5b86/src/library/ReleaseNotes.ts#L40)
+Defined in: [library/ReleaseNotes.ts:40](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/library/ReleaseNotes.ts#L40)
 
 Default release notes template.
 
