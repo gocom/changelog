@@ -8,7 +8,7 @@
 
 > **Version** = `string` \| `` `${number}.${number}.${number}` `` \| `` `${number}.${number}.${number}-${string}` `` \| `` `${number}.${number}.${number}+${string}` ``
 
-Defined in: [types/Version.ts:44](https://github.com/gocom/changelog/blob/d427b90e897d313546949939f234807dde0c823c/src/types/Version.ts#L44)
+Defined in: [types/Version.ts:44](https://github.com/gocom/changelog/blob/59f7f4923a29c3284cb63714fbdbd9d86a995375/src/types/Version.ts#L44)
 
 Version number.
 

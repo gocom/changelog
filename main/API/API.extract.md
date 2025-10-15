@@ -6,9 +6,9 @@
 
 # Function: extract()
 
-> **extract**(`options`): `undefined` \| [`Changelog`](../Types/API.Changelog.md)
+> **extract**(`options`): [`Changelog`](../Types/API.Changelog.md) \| `undefined`
 
-Defined in: [library/Extract.ts:70](https://github.com/gocom/changelog/blob/d427b90e897d313546949939f234807dde0c823c/src/library/Extract.ts#L70)
+Defined in: [library/Extract.ts:70](https://github.com/gocom/changelog/blob/59f7f4923a29c3284cb63714fbdbd9d86a995375/src/library/Extract.ts#L70)
 
 Extracts the specified version from the given changelog.
 
@@ -25,7 +25,7 @@ Options.
 
 ## Returns
 
-`undefined` \| [`Changelog`](../Types/API.Changelog.md)
+[`Changelog`](../Types/API.Changelog.md) \| `undefined`
 
 Returns changelog for the version, or `undefined`, if the version could not
 be found from the changelog, or the version number is not a valid semantic version number.

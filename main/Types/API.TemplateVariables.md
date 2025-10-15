@@ -6,7 +6,7 @@
 
 # Interface: TemplateVariables
 
-Defined in: [types/Template.ts:41](https://github.com/gocom/changelog/blob/d427b90e897d313546949939f234807dde0c823c/src/types/Template.ts#L41)
+Defined in: [types/Template.ts:41](https://github.com/gocom/changelog/blob/59f7f4923a29c3284cb63714fbdbd9d86a995375/src/types/Template.ts#L41)
 
 Handlebar template variables.
 

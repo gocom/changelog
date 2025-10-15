@@ -6,9 +6,9 @@
 
 # Function: latest()
 
-> **latest**(`contents`): `undefined` \| [`Changelog`](../Types/API.Changelog.md)
+> **latest**(`contents`): [`Changelog`](../Types/API.Changelog.md) \| `undefined`
 
-Defined in: [library/Extract.ts:118](https://github.com/gocom/changelog/blob/d427b90e897d313546949939f234807dde0c823c/src/library/Extract.ts#L118)
+Defined in: [library/Extract.ts:118](https://github.com/gocom/changelog/blob/59f7f4923a29c3284cb63714fbdbd9d86a995375/src/library/Extract.ts#L118)
 
 Gets the latest version from the given changelog document contents.
 
@@ -27,7 +27,7 @@ you want to parse the whole changelog.
 
 ## Returns
 
-`undefined` \| [`Changelog`](../Types/API.Changelog.md)
+[`Changelog`](../Types/API.Changelog.md) \| `undefined`
 
 Changelog for the latest version, or `undefined` if there were no valid versions
 available in the changelog.
