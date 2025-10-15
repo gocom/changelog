@@ -6,7 +6,7 @@
 
 # Interface: ReleaseNotesOptions
 
-Defined in: [types/ReleaseNotes.ts:37](https://github.com/gocom/changelog/blob/fe56088accc93f0c9f2d904b16015f9182243960/src/types/ReleaseNotes.ts#L37)
+Defined in: [types/ReleaseNotes.ts:37](https://github.com/gocom/changelog/blob/cc3b7d1c5efcd58c3abc117b9a9e3a34830f5b86/src/types/ReleaseNotes.ts#L37)
 
 Release notes options.
 
@@ -18,7 +18,7 @@ Available options for [asReleaseNotes](../API/API.asReleaseNotes.md).
 
 > **changelog**: [`Changelog`](../Types/API.Changelog.md)
 
-Defined in: [types/ReleaseNotes.ts:41](https://github.com/gocom/changelog/blob/fe56088accc93f0c9f2d904b16015f9182243960/src/types/ReleaseNotes.ts#L41)
+Defined in: [types/ReleaseNotes.ts:41](https://github.com/gocom/changelog/blob/cc3b7d1c5efcd58c3abc117b9a9e3a34830f5b86/src/types/ReleaseNotes.ts#L41)
 
 Changelog to format as release notes.
 
@@ -28,7 +28,7 @@ Changelog to format as release notes.
 
 > `optional` **template**: `string` \| `string`[]
 
-Defined in: [types/ReleaseNotes.ts:70](https://github.com/gocom/changelog/blob/fe56088accc93f0c9f2d904b16015f9182243960/src/types/ReleaseNotes.ts#L70)
+Defined in: [types/ReleaseNotes.ts:70](https://github.com/gocom/changelog/blob/cc3b7d1c5efcd58c3abc117b9a9e3a34830f5b86/src/types/ReleaseNotes.ts#L70)
 
 Template strings.
 
@@ -64,7 +64,7 @@ the templates into if conditionals, omitting the template, if it is not needed.
 
 > `optional` **variables**: [`TemplateVariables`](../Types/API.TemplateVariables.md)
 
-Defined in: [types/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/fe56088accc93f0c9f2d904b16015f9182243960/src/types/ReleaseNotes.ts#L92)
+Defined in: [types/ReleaseNotes.ts:92](https://github.com/gocom/changelog/blob/cc3b7d1c5efcd58c3abc117b9a9e3a34830f5b86/src/types/ReleaseNotes.ts#L92)
 
 Custom variables passed down to the template.
 
