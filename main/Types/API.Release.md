@@ -6,7 +6,7 @@
 
 # Interface: Release
 
-Defined in: [types/Release.ts:34](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Release.ts#L34)
+Defined in: [types/Release.ts:34](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Release.ts#L34)
 
 Detailed release results.
 
@@ -20,7 +20,7 @@ Detailed release results.
 
 > `optional` **build**: readonly `string`[]
 
-Defined in: [types/Release.ts:56](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Release.ts#L56)
+Defined in: [types/Release.ts:56](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Release.ts#L56)
 
 Build identifier component from the version number.
 
@@ -33,7 +33,7 @@ otherwise.
 
 > `optional` **isPrerelease**: `boolean`
 
-Defined in: [types/Changelog.ts:64](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Changelog.ts#L64)
+Defined in: [types/Changelog.ts:64](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Changelog.ts#L64)
 
 Whether the version is considered pre-release.
 
@@ -47,7 +47,7 @@ Whether the version is considered pre-release.
 
 > **major**: `number`
 
-Defined in: [types/Release.ts:38](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Release.ts#L38)
+Defined in: [types/Release.ts:38](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Release.ts#L38)
 
 Major version number component from the version number.
 
@@ -57,7 +57,7 @@ Major version number component from the version number.
 
 > **minor**: `number`
 
-Defined in: [types/Release.ts:43](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Release.ts#L43)
+Defined in: [types/Release.ts:43](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Release.ts#L43)
 
 Minor version number component from the version number.
 
@@ -67,7 +67,7 @@ Minor version number component from the version number.
 
 > **notes**: `string`
 
-Defined in: [types/Changelog.ts:59](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Changelog.ts#L59)
+Defined in: [types/Changelog.ts:59](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Changelog.ts#L59)
 
 Changelog contents, such as release notes.
 
@@ -83,7 +83,7 @@ Contains the body content from under the version heading, up to the next heading
 
 > **patch**: `number`
 
-Defined in: [types/Release.ts:48](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Release.ts#L48)
+Defined in: [types/Release.ts:48](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Release.ts#L48)
 
 Patch version number component from the version number.
 
@@ -93,7 +93,7 @@ Patch version number component from the version number.
 
 > `optional` **prerelease**: readonly (`string` \| `number`)[]
 
-Defined in: [types/Release.ts:64](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Release.ts#L64)
+Defined in: [types/Release.ts:64](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Release.ts#L64)
 
 Prerelease component from the version number.
 
@@ -106,7 +106,7 @@ otherwise.
 
 > `optional` **titleEnd**: `string`
 
-Defined in: [types/Changelog.ts:80](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Changelog.ts#L80)
+Defined in: [types/Changelog.ts:80](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Changelog.ts#L80)
 
 Content at the end of the title.
 
@@ -123,7 +123,7 @@ number.
 
 > `optional` **titleStart**: `string`
 
-Defined in: [types/Changelog.ts:72](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Changelog.ts#L72)
+Defined in: [types/Changelog.ts:72](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Changelog.ts#L72)
 
 Content at the start of the title.
 
@@ -140,7 +140,7 @@ number.
 
 > **version**: `string`
 
-Defined in: [types/Changelog.ts:52](https://github.com/gocom/changelog/blob/1f32b5a38873cf1adffe09e61e1be6c08cf559d1/src/types/Changelog.ts#L52)
+Defined in: [types/Changelog.ts:52](https://github.com/gocom/changelog/blob/9fcfad632f057413cf4170c7ec9b6f607dd65f4a/src/types/Changelog.ts#L52)
 
 Version the changelog is for.
 
